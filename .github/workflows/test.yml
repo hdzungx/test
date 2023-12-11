@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
-
-env:
-  REPO_URL: https://github.com/username/repo.git
-
+  workflow_dispatch:
+    inputs:
+     REPO_URL:
+      description: 'REPO URL'
+      default: ''
+      required: true  
+      
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        repository: ${{ env.REPO_URL }}
+        repository: ${{ github.event.inputs.REPO_URL }} 
 
     - name: Set up JDK
       uses: actions/setup-java@v2
