@@ -6,11 +6,11 @@ on:
       - main
   workflow_dispatch:
     inputs:
-     REPO_URL:
-      description: 'REPO URL'
-      default: ''
-      required: true  
-      
+      repo_url:
+        description: 'Repository URL'
+        default: 'https://gitlab.com/cherishos-udc/android_vendor_certification'
+        required: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        repository: ${{ github.event.inputs.REPO_URL }} 
+        repository: ${{ github.event.inputs.repo_url }}
 
     - name: Set up JDK
       uses: actions/setup-java@v2
@@ -36,7 +36,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: v${{ github.run_number }}
         release_name: Release ${{ github.run_number }}
