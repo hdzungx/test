@@ -14,7 +14,7 @@
     ],
     "modules-right": [
         "tray",
-        "temperature",
+        //"temperature",
 	    "cpu",
         "memory",
 	    //"custom/diskfree",
@@ -90,6 +90,8 @@
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol"
     },
+
+    /*
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -98,6 +100,8 @@
         "format": " Temp: {temperatureC}°C",
         // "format-icons": ["", "", ""]
     },
+    */ 
+    
     "backlight": {
     "format": "󰔎 : {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],

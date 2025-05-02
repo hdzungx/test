@@ -65,7 +65,7 @@ window#waybar.hidden {
 #pulseaudio,
 #network,
 #clock,
-#temperature,
+/* #temperature, */
 #tray {
   border-radius: 4px;
   margin: 4px 3px;
@@ -144,9 +144,11 @@ window#waybar.hidden {
   background-color: #cba6f7;
 }
 
+/*
 #temperature {
   background-color: #ff6c6b;
 }
+*/
 
 tooltip {
   border-radius: 8px;
