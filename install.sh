@@ -44,6 +44,7 @@ pacman_packages=(
     kitty
     nemo
     unrar
+    unzip
     ranger
     ueberzug
 
